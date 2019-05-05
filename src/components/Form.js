@@ -4,7 +4,7 @@ import React from "react";
 class Form extends React.Component {
     render() {
         return (
-            <div>Form Component 1</div>
+            <div>Form Component</div>
         );
     }
 }
