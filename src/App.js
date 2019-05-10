@@ -6,10 +6,10 @@ import Form from "./components/Form";
 class App extends React.Component {
     render() {
         return (
-            <div>
+            <>
                 <Titles/>
                 <Form/>
-            </div>
+            </>
         );
     }
 }
