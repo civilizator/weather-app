@@ -8,14 +8,7 @@ const API_KEY = "6ad702c17f8ab90914ba6852623d7a86";
 
 class App extends React.Component {
 
-    state = {
-        country: undefined,
-        city: undefined,
-        temperature: undefined,
-        description: undefined,
-        humidity: undefined,
-        error: undefined
-    };
+
 
     getWeather = async (e) => {
         e.preventDefault();
