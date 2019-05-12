@@ -8,9 +8,20 @@ const API_KEY = "6ad702c17f8ab90914ba6852623d7a86";
 
 class App extends React.Component {
 
+    state = {
+        country: undefined,
+        city: undefined,
+        temperature: undefined,
+        description: undefined,
+        humidity: undefined,
+        error: undefined
+    };
+
     getWeather = async (e) => {
         e.preventDefault();
-        const api_call = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=Sayansk,ru&appid=${API_KEY}&units=metric`);
+        const city = e.target.elements.city.value;
+        const country = e.target.elements.country.value;
+        const api_call = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city},${country}&appid=${API_KEY}&units=metric`);
         const data = await api_call.json();
         console.log(data);
     };
