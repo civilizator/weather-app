@@ -24,16 +24,18 @@ class App extends React.Component {
         const api_call = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city},${country}&appid=${API_KEY}&units=metric`);
         const data = await api_call.json();
 
-        console.log(data);
+        if (city && country) {
+            console.log(data);
 
-        this.setState({
-            country: data.sys.country,
-            city: data.name,
-            temperature: data.main.temp,
-            description: data.weather[0].description,
-            humidity: data.main.humidity,
-            error: ""
-        });
+            this.setState({
+                country: data.sys.country,
+                city: data.name,
+                temperature: data.main.temp,
+                description: data.weather[0].description,
+                humidity: data.main.humidity,
+                error: ""
+            });
+        }
     };
 
     render() {
