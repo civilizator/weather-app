@@ -5,11 +5,11 @@ class Weather extends React.Component {
     render() {
         return (
             <div>
-                Location: {this.props.country}, {this.props.city} <br/>
-                Temperature: {this.props.temperature} <br/>
-                Conditions: {this.props.description} <br/>
-                Humidity: {this.props.humidity} <br/>
-                {this.props.error}
+                <p>Location: {this.props.country}, {this.props.city}</p>
+                <p>Temperature: {this.props.temperature}</p>
+                <p>Conditions: {this.props.description}</p>
+                <p>Humidity: {this.props.humidity}</p>
+                <p>{this.props.error}</p>
             </div>
         );
     }
