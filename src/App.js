@@ -14,7 +14,7 @@ class App extends React.Component {
         temperature: undefined,
         description: undefined,
         humidity: undefined,
-        error: undefined
+        error: ""
     };
 
     getWeather = async (e) => {
@@ -24,8 +24,9 @@ class App extends React.Component {
         const api_call = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city},${country}&appid=${API_KEY}&units=metric`);
         const data = await api_call.json();
 
-        if (city && country) {
-            console.log(data);
+        console.log(data);
+
+        if (city && country && data.cod != 404) {
             this.setState({
                 country: data.sys.country,
                 city: data.name,
@@ -49,16 +50,30 @@ class App extends React.Component {
     render() {
         return (
             <>
-                <Titles/>
-                <Form getWeather={this.getWeather}/>
-                <Weather
-                    country={this.state.country}
-                    city={this.state.city}
-                    temperature={this.state.temperature}
-                    description={this.state.description}
-                    humidity={this.state.humidity}
-                    error={this.state.error}
-                />
+                <div>
+                    <div className="wrapper">
+                        <div className="main">
+                            <div className="container">
+                                <div className="row">
+                                    <div className="col-5 title-container">
+                                        <Titles/>
+                                    </div>
+                                    <div className="col-7 form-container">
+                                        <Form getWeather={this.getWeather}/>
+                                        <Weather
+                                            country={this.state.country}
+                                            city={this.state.city}
+                                            temperature={this.state.temperature}
+                                            description={this.state.description}
+                                            humidity={this.state.humidity}
+                                            error={this.state.error}
+                                        />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </>
         );
     }
