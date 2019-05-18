@@ -17,7 +17,7 @@ import React from "react";
 
 const Weather = props => (
     <>
-        <div>
+        <div className="weather__info">
             {props.country && props.city && <p>Location: {props.country}, {props.city}</p>}
             {props.temperature && <p>Temperature: {props.temperature}</p>}
             {props.description && <p>Conditions: {props.description}</p>}

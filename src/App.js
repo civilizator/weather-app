@@ -50,25 +50,23 @@ class App extends React.Component {
     render() {
         return (
             <>
-                <div>
-                    <div className="wrapper">
-                        <div className="main">
-                            <div className="container">
-                                <div className="row">
-                                    <div className="col-5 title-container">
-                                        <Titles/>
-                                    </div>
-                                    <div className="col-7 form-container">
-                                        <Form getWeather={this.getWeather}/>
-                                        <Weather
-                                            country={this.state.country}
-                                            city={this.state.city}
-                                            temperature={this.state.temperature}
-                                            description={this.state.description}
-                                            humidity={this.state.humidity}
-                                            error={this.state.error}
-                                        />
-                                    </div>
+                <div className="wrapper">
+                    <div className="main">
+                        <div className="container">
+                            <div className="row">
+                                <div className="col-5 title-container">
+                                    <Titles/>
+                                </div>
+                                <div className="col-7 form-container">
+                                    <Form getWeather={this.getWeather}/>
+                                    <Weather
+                                        country={this.state.country}
+                                        city={this.state.city}
+                                        temperature={this.state.temperature}
+                                        description={this.state.description}
+                                        humidity={this.state.humidity}
+                                        error={this.state.error}
+                                    />
                                 </div>
                             </div>
                         </div>
