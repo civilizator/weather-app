@@ -8,6 +8,14 @@
     "react-dom": "^16.8.6",
     "react-scripts": "3.0.0"
   },
+  "originalRepository": {
+    "type": "git",
+    "url": "https://github.com/hamza-mirza/react-weather-app"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/civilizator/weather-app"
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
