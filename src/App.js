@@ -4,7 +4,7 @@ import Titles from "./components/Titles";
 import Form from "./components/Form";
 import Weather from "./components/Weather";
 
-const API_KEY = "Your API Key";
+const API_KEY = "";
 
 class App extends React.Component {
 
@@ -14,7 +14,7 @@ class App extends React.Component {
         temperature: undefined,
         description: undefined,
         humidity: undefined,
-        error: ""
+        error: "Your API Key"
     };
 
     getWeather = async (e) => {
@@ -26,7 +26,7 @@ class App extends React.Component {
 
         console.log(data);
 
-        if (city && country && data.cod != 404) {
+        if (city && country && data.cod !== 404 && data.cod !== 401 ) {
             this.setState({
                 country: data.sys.country,
                 city: data.name,
