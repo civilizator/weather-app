@@ -4,7 +4,7 @@ import Titles from "./components/Titles";
 import Form from "./components/Form";
 import Weather from "./components/Weather";
 
-const API_KEY = "";
+const API_KEY = "Your API Key";
 
 class App extends React.Component {
 
@@ -14,7 +14,7 @@ class App extends React.Component {
         temperature: undefined,
         description: undefined,
         humidity: undefined,
-        error: "Your API Key"
+        error: ""
     };
 
     getWeather = async (e) => {
